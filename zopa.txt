@@ -1,0 +1,113 @@
+
+
+We would like to see a little project.
+
+
+Source code requirements:
+
+
+1.
+No Bally’s mention in the code/project.
+
+2.
+No public access to test task implementation.
+
+3.
+Archive project sources into one file and attach to email.
+
+4.
+Package name “org.example.demo” and artifact name “demo-project”
+
+5.
+Write code by yourself and do not copy any existing solution
+
+6.
+Solution is final and no updates after review will be accepted
+
+
+Requirements:
+
+a.
+Should be runnable from the IDE.
+
+b.
+Read input data from an external http source every X seconds (one of options below):
+
+    a.
+    https://docs.coincap.io
+    or
+
+    b.
+    https://newsapi.org/
+    or
+
+    c.
+    https://api.nasa.gov/
+
+
+c.
+Process data with any rules (modify input value, add additional values)
+
+d.
+Use H2 or any other in-memory RDBMS
+
+e.
+For output create REST-like endpoints
+
+a.
+By the request in browser show the last 10 or n entries (no UI, just json)
+
+b.
+Delete entries by name
+
+f.
+Don’t use hibernate (JPA). Use plain SQL.
+
+g.
+Spring Boot 2, Java
+
+h.
+No Spring integrations framework or Feign Client
+
+i.
+Unit tests
+
+j.
+Create a Docker image for the project, so we can run this as a Docker container
+
+
+Project structure:
+
+   src/
+
+
+      main/
+
+
+          java/
+
+
+              --here you have classes for process and store data, and defined API to show the data
+
+
+      test/
+
+
+          java/
+
+
+              --here you have test classes for reading data, invoke methods from the ‘main’ classes with data -> read from DB -> validate results
+
+
+P.S. We’ll take a look at every single class
+☺
+
+
+P.P.S. Do not reinvent the wheel.
+
+
+P.P.P.S. Do not spend time on complex processing logic, please.
+
+
+
+Best regards

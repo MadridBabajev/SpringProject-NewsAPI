@@ -1,0 +1,16 @@
+app:
+  datasource:
+    test:
+      driverClassName: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb
+      username: sa
+      hikari:
+        auto-commit: false
+
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+        trace: true

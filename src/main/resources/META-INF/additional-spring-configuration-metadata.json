@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "app.datasource.main.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for app.datasource.main.driver-class-name."
+    },
+    {
+      "name": "app.datasource.main.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for app.datasource.main.driver-class-name."
+    },
+    {
+      "name": "app.datasource.main.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for app.datasource.main.driver-class-name."
+    },
+    {
+      "name": "app.flyway",
+      "type": "java.lang.String",
+      "description": "Description for app.flyway."
+    }
+  ] }

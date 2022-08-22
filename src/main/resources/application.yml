@@ -1,0 +1,47 @@
+
+# for traditional database connection
+#app:
+#  datasource:
+#    main:
+#      driver-class-name: org.postgresql.Driver
+#      jdbc-url: jdbc:postgresql://localhost:5432/amigoscode
+#      username: amigoscode
+#      password: 'password'
+#      pool-size: 30
+#    flyway:
+#      locations: "classpath:db/migration"
+#
+#server:
+#  error:
+#    include-binding-errors: always
+#    include-message: always
+#
+#flyway:
+#  validate-on-migrate: false
+#  out-of-order: true
+#  encoding: UTF-8
+
+
+
+# in memory
+
+app:
+  datasource:
+    main:
+      driverClassName: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:myDb
+      username: sa
+    test:
+      driverClassName: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb
+      username: sa
+      hikari:
+        auto-commit: false
+
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+        trace: true
