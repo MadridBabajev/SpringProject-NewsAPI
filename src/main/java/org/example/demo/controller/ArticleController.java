@@ -45,7 +45,6 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-
     @RequestMapping(
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
@@ -63,13 +62,6 @@ public class ArticleController {
         int result = articleService.deleteArticle(title);
         return integerResponseEntity(result);
     }
-
-    // Reading data from an API method...
-
-//    @Scheduled(initialDelay = 2000L, fixedRate = 10000L)
-//    public void printLnEvery10Sec() {
-//        System.out.println("10 sec.. passed");
-//    }
 
     @Scheduled(initialDelay = 2000L, fixedRate = 60000L)
     public void fetchNewsFromAPI() throws URISyntaxException {
@@ -128,6 +120,7 @@ public class ArticleController {
             return LocalDate.now();
         }
     }
+
 
     private ResponseEntity<Integer> integerResponseEntity(int result) {
         if (result == 1) return ResponseEntity.ok().build();
