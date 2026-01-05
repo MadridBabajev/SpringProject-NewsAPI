@@ -75,4 +75,6 @@ Unit tests can be run directly from your IDE or via Maven.
 
 <div style="text-align: left;"> <img src="public/unit-tests.png" width="400" height="200" alt="Unit Tests"> </div>
 
+---
+
 _Madrid Babajev (2.05.2026)_
