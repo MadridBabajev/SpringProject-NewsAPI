@@ -55,7 +55,7 @@ There is no traditional UI. The API can be tested using tools such as Postman, B
 **GET** `/api/news`
 **DELETE** `/api/news`
 
-<div style="text-align: left;"> <img src="public/request.png" width="800" height="650" alt="API News Request"> </div>
+<div style="text-align: left;"> <img src="docs/request.png" width="800" height="650" alt="API News Request"> </div>
 
 #### H2 Database Console
 
@@ -67,13 +67,13 @@ Use the following credentials:
 * Username: sa
 * Password: (empty)
 
-<div style="text-align: left;"> <img src="public/h2.png" width="600" height="200" alt="H2 Console"> </div>
+<div style="text-align: left;"> <img src="docs/h2.png" width="600" height="200" alt="H2 Console"> </div>
 
 #### Running Unit Tests
 
 Unit tests can be run directly from your IDE or via Maven.
 
-<div style="text-align: left;"> <img src="public/unit-tests.png" width="400" height="200" alt="Unit Tests"> </div>
+<div style="text-align: left;"> <img src="docs/unit-tests.png" width="400" height="200" alt="Unit Tests"> </div>
 
 ---
 
