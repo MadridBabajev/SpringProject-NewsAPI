@@ -1,6 +1,21 @@
-# Defining docker image
-FROM openjdk:17
-LABEL maintainer="madridproject.net"
-ADD target/demo-project-0.0.1-SNAPSHOT.jar my-spring-project-demo.jar
-#       - copying the jar file to docker image
-ENTRYPOINT ["java", "-jar", "my-spring-project-demo.jar"]
+FROM maven:3.9-eclipse-temurin-21 AS build
+WORKDIR /workspace
+
+COPY pom.xml .
+COPY mvnw .
+COPY .mvn .mvn
+
+# Pre-download dependencies
+RUN mvn -q -DskipTests dependency:go-offline
+
+# Copy sources and build
+COPY src ./src
+RUN mvn -q -DskipTests package
+
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+
+COPY --from=build /workspace/target/*.jar app.jar
+
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

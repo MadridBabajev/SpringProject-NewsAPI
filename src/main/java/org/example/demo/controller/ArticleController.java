@@ -65,26 +65,23 @@ public class ArticleController {
 
     @Scheduled(initialDelay = 2000L, fixedRate = 60000L)
     public void fetchNewsFromAPI() throws URISyntaxException {
-
-//         Build request with 3 parameters
+        // Articles may be missing, test the call directly on https://newsapi.org/v2/top-headlines
         HttpClient httpClient = HttpClient.newHttpClient();
         URI uri = new URIBuilder(NEWS_API_URL)
-                .addParameter("country", "gb")
+                .addParameter("country", "us")
                 .addParameter("category", "sports")
-                .addParameter("apiKey", "95f2550c49bc44fdae185c395f84a672")
+                .addParameter("apiKey", "cbd725e1659242e2928ddfd523b9094e")
                 .build();
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .uri(uri)
                 .build();
 
-        // Build response
         HttpResponse<String> response = httpClient
                 .sendAsync(request, HttpResponse.BodyHandlers.ofString())
                 .join();
 
         List<Article> extractedNews = extractNewsFromResponse(response);
-
         extractedNews.forEach(news -> articleService.addArticle(news));
     }
 
