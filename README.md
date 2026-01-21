@@ -77,4 +77,4 @@ Unit tests can be run directly from your IDE or via Maven.
 
 ---
 
-_Madrid Babajev (2.05.2026)_
+_Madrid Babajev (5.01.2026)_
